@@ -4,7 +4,7 @@ metadata:
   name: label-demo
   labels:
     course: DevOps
-    Trainer: "Sivakumar Reddy"
+    Trainer: "SivakumarReddy"
 spec:
   # list of containers
   containers:
