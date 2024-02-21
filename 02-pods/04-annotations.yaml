@@ -4,9 +4,9 @@ metadata:
   name: annotations
   labels:
     course: DevOps
-    Trainer: "Sivakumar Reddy"
+    Trainer: "SivakumarReddy"
   annotations:
-    com.roboshop.training.duration: "120hours"
+    com.roboshop.training.duration: "120 hours"
     jenkins.url: "https://jenkins.com/roboshop/catalogue#45"
 spec:
   # list of containers
