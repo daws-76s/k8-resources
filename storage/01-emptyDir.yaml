@@ -58,12 +58,12 @@ spec:
           mountPath: /usr/share/filebeat/filebeat.yml
           subPath: filebeat.yml
 
-    volumes:
-    - name: nginx-logs
-      emptyDir: {}
-    - name: filebeat-config
-      configMap:
-          name: filebeat-config
-          items:
-            - key: filebeat.yml
-              path: filebeat.yml
+      volumes:
+      - name: nginx-logs
+        emptyDir: {}
+      - name: filebeat-config
+        configMap:
+            name: filebeat-config
+            items:
+              - key: filebeat.yml
+                path: filebeat.yml
