@@ -34,6 +34,13 @@ spec:
         image: nginx
         ports:
         - containerPort: 80
+        volumeMounts:
+        - name: nginx-data
+          mountPath: /usr/share/nginx/html
+      volumes:
+      - name: nginx-data
+        persistentVolumeClaim:
+          claimName: efs-dynamic
 ---
 apiVersion: v1
 kind: Service
