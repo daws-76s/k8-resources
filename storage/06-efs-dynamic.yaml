@@ -1,0 +1,49 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: efs-dynamic
+spec:
+  accessModes:
+    - ReadWriteMany
+  storageClassName: efs-sc-roboshop
+  resources:
+    requests:
+      storage: 5Gi
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: efs-dynamic
+  labels:
+    app: nginx
+    demo: efs-dynamic
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx
+      demo: efs-dynamic
+  template:
+    metadata:
+      labels:
+        app: nginx
+        demo: efs-dynamic
+    spec:
+      containers:
+      - name: nginx
+        image: nginx
+        ports:
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: efs-dynamic
+spec:
+  type: LoadBalancer
+  selector:
+    demo: efs-dynamic
+  ports:
+  - protocol: TCP
+    port: 80 #service-port
+    targetPort: 80 #container-port
