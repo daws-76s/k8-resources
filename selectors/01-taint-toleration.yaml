@@ -10,3 +10,7 @@ spec:
     #here with this line port will not be opened, just for information
     ports:
     - containerPort: 80
+  tolerations:
+  - key: "project"
+    operator: "Exists"
+    effect: "NoSchedule"
