@@ -2,6 +2,8 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: affinity-pod-1
+  labels:
+    name: affinity-pod-1
 spec:
   # list of containers
   containers:
