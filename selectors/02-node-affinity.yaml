@@ -11,7 +11,7 @@ spec:
           - key: project
             operator: In
             values:
-            - roboshop1
+            - roboshop
   containers:
   - name: with-node-affinity
     image: nginx
